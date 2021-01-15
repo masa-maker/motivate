@@ -2,8 +2,8 @@
     
   <div class="container">
     <div class="form-wrapper">
-    <%= render 'shared/error_messages', model: @user %>
-      <%= form_with model: @post, local: true do |f| %>
+    <%= render 'shared/error_messages', model: @post %>
+      <%= form_with model: @post, url: posts_path, local: true do |f| %>
         <div class="form-group">
           <%= f.label :"画像" %><br />
           <%= f.file_field :image  %>
@@ -11,7 +11,7 @@
 
         <div class="form-group">
           <%= f.label :"文章" %><br />
-          <%= f.text_field :text, class: "form-control" %>
+          <%= f.text_area :text, class: "form-control" %>
         </div>
 
         <div class="actions">
