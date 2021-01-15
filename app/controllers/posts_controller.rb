@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_item, only: :edit
+  before_action :set_item, only: [:edit, :update]
   before_action :authenticate_user!, except: [:index]
   before_action :move_to_index, only: [:edit] 
   
@@ -22,6 +22,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
 private
