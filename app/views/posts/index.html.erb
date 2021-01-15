@@ -15,7 +15,7 @@
             <%= link_to "いいね", "#", class:"btn btn-outline-danger"%>
           <% end %>
             <% if user_signed_in? && current_user.id == post.user_id%>
-              <%= link_to "編集", "#", class:"btn btn-outline-dark"%>
+              <%= link_to "編集", edit_post_path(post.id), class:"btn btn-outline-dark"%>
               <%= link_to "削除", "#", class:"btn btn-outline-dark"%>
             <% end %>
           </div>
