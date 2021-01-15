@@ -1,3 +1,25 @@
 <%= render "shared/header"%>
 
+<%# 投稿一覧%>
+<div class="container">
+  <div class="inner">
+    <div class="card-wrapper">
+      <div class ="card">
+        <div class="image-body">
+        </div>
+        <div class="text-body">
+          <div class="options">
+            <%= link_to "いいね", "#", class:"btn btn-outline-danger"%>
+            <%= link_to "編集", "#", class:"btn btn-outline-dark"%>
+            <%= link_to "削除", "#", class:"btn btn-outline-dark"%>
+          </div>
+          <div class="user-name">TEST</div>
+          <div class="message"></div>
+          <div class="create-time">2020/01/15 15:37</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%= render "shared/footer"%>
