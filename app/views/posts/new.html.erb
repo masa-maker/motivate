@@ -1,0 +1,22 @@
+<%= render "shared/header"%>
+
+<div class="container">
+  <div class="inner">
+    <div class="card-wrapper">
+      <%= form_with model: "hoge"  local: true do |f| %>
+      <div class ="card">
+        <div class="image-body">
+          <%= f.file_field :"hoge" %>
+        </div>
+        <div class="text-body">
+          <div class="message">
+            <%= f.text_area :"hoge",  placeholder:"" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer"%>
