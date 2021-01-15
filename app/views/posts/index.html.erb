@@ -16,7 +16,7 @@
           <% end %>
             <% if user_signed_in? && current_user.id == post.user_id%>
               <%= link_to "編集", edit_post_path(post.id), class:"btn btn-outline-dark"%>
-              <%= link_to "削除", "#", class:"btn btn-outline-dark"%>
+              <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-outline-dark"%>
             <% end %>
           </div>
           <div class="user-name"><%= post.user.name%></div>
