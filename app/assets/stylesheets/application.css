@@ -17,3 +17,21 @@
  * {
    box-sizing: border-box;
  }
+ 
+ .error-alert {
+  display: inline-block;
+  position: absolute;
+  top: 150px;
+ }
+
+ .error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
+.login-flash-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
