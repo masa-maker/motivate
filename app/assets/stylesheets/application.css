@@ -18,6 +18,11 @@
    box-sizing: border-box;
  }
  
+ .container {
+   width: 100vw;
+   height: 100vh;
+ }
+ 
  .error-alert {
   display: inline-block;
   position: absolute;
@@ -35,3 +40,4 @@
   list-style: circle;
   color: rgb(182, 48, 0);
 }
+
