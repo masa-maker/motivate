@@ -36,10 +36,10 @@
 
 ## profiles テーブル
 
-| Column                    | Type    | Options                        |
-|---------------------------|---------|--------------------------------|
-| info                      | text    | null: false                    |
-| user                      | string  | null: false, foreign_key: true |
+| Column                    | Type        | Options                        |
+|---------------------------|-------------|--------------------------------|
+| info                      | text        | null: false                    |
+| user                      | references  | null: false, foreign_key: true |
 
 ### Association
 
