@@ -5,7 +5,4 @@ class UsersController < ApplicationController
     @posts = user.posts
     @user = User.find(params[:id])
   end
-
-  def new
-  end
 end
