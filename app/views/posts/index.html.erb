@@ -19,7 +19,8 @@
               <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-outline-dark"%>
             <% end %>
           </div>
-          <div class="user-name"><%= post.user.name%></div>
+          <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
+          
           <div class="message"><%= post.text %></div>
           <div class="create-time"><%= post.created_at%></div>
         </div>
