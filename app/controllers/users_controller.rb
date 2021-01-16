@@ -4,5 +4,6 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @posts = user.posts
     @user = User.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 end

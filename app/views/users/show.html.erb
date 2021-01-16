@@ -1,14 +1,26 @@
 <%= render "shared/header"%>
 <div class="container">
   <div class="profile-wrapper">
+  <% if @profile.present? %>
+    <div class="profile-image">
+    <%= image_tag @profile.image,  size: '150x150' ,class: "rounded-circle border border-secondary" %>
+    </div>
+  <% else %>
     <div class="profile-image">
     <%= image_tag 'icon_camera.png',  size: '80x80' ,class: "rounded-circle" %>
     </div>
+  <% end %>
     <div class="follow-btn">
       <ul class="follow-list">
+      
       <% if current_user.id == @user.id %>
+      <% unless @profile.present? %>
         <li>
-          <%= link_to "編集する", new_user_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "プロフィール作成", user_profiles_path(@user.id), class: "btn btn-primary btn-lg" %>
+        </li>
+      <% end %>
+        <li>
+          <%= link_to "プロフィール更新", edit_user_profile_path(@user.id), class: "btn btn-primary btn-lg" %>
         </li>
       <% else %>
         <li>
@@ -23,9 +35,11 @@
         </li>
       </ul>
     </div>
-    
+    <% if @profile.present? %>
     <div class="profile-info">
-    </div> 
+    <%= @profile.info %>
+    </div>
+    <% end %> 
         <div class="inner">
           <div class="card-wrapper">
           <% @posts.each do |post|%>

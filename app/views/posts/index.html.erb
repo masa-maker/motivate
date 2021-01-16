@@ -12,11 +12,11 @@
         <div class="text-body">
           <div class="options">
           <% if user_signed_in? %>
-            <%= link_to "いいね", "#", class:"btn btn-outline-danger"%>
+            <%= link_to "いいね", "#", class:"btn btn-danger"%>
           <% end %>
             <% if user_signed_in? && current_user.id == post.user_id%>
-              <%= link_to "編集", edit_post_path(post.id), class:"btn btn-outline-dark"%>
-              <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-outline-dark"%>
+              <%= link_to "編集", edit_post_path(post.id), class:"btn btn-dark"%>
+              <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-dark"%>
             <% end %>
           </div>
           <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
