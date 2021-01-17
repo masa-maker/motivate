@@ -18,6 +18,10 @@
    box-sizing: border-box;
  }
  
+ ul {
+   list-style: none;
+ }
+
  .container {
    width: 100vw;
    height: 100vh;
