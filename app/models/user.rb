@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :posts
   has_one :profile
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 end
