@@ -1,0 +1,59 @@
+<%= render "shared/header"%>
+<div class="container">
+  <div class="profile-wrapper">
+  <% unless @user.profile.nil? %>
+    <div class="profile-image">
+    <%= image_tag @user.profile.image, size: '150x150' ,class: "rounded-circle border border-secondary" %>
+    </div>
+  <% else %>
+    <div class="profile-image">
+    <%= image_tag 'bluewall.jpg',  size: '80x80' ,class: "rounded-circle" %>
+    </div>
+  <% end %>
+    <div class="follow-btn">
+      <ul class="follow-list">
+       
+      <% if current_user.id == @user.id %>
+       <% if @user.profile.nil? %>
+          <li>
+            <%= link_to "プロフィール作成", new_user_profile_path(@user.id), class: "btn btn-primary btn-lg" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "プロフィール更新", edit_user_profile_path(@user.profile.id), class: "btn btn-primary btn-lg" %>
+          </li>
+        <% end %>
+      <% else %>
+        <li>
+          <%= link_to "フォローする", "#", class: "btn btn-primary btn-lg" %>
+        </li>
+      <% end %>
+        <li>
+        <%= link_to "1000", "#" %><p>フォロワー</p>
+        </li>
+        <li>
+        <%= link_to "1", "#" %><p>フォロー中</p>
+        </li>
+      </ul>
+    </div>
+    <% if @user.profile.present? %>
+    <div class="profile-info">
+    <%= @user.profile.info %>
+    </div>
+    <% else %>
+    <div class="profile-info">
+    <p>プロフィールを更新し、ここに自己紹介を表示させてください。</p>
+    </div>
+    <% end %> 
+        <div class="inner">
+          <div class="card-wrapper">
+          <% @posts.each do |post|%>
+            <%= render partial: "shared/post", locals: { post: post }%>
+          <% end %> 
+          </div>
+        <div>
+  </div>
+</div>
+
+
+<%= render "shared/footer"%>

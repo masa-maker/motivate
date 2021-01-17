@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-
-  validates :name, presence: true
+  has_one :profile
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

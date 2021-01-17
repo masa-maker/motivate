@@ -2,7 +2,7 @@
 <%= link_to "MOTIVATE", root_path, class: "navbar-brand"%>
 <div class="navbar-nav">
 <% if user_signed_in? %>
-  <%= link_to  current_user.name , "#", class: "nav-item nav-link"%>
+  <%= link_to  current_user.name , user_path(current_user.id), class: "nav-item nav-link"%>
 <% end %>
 </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

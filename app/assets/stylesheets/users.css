@@ -6,3 +6,39 @@
 .form-group {
   width: 50%;
 }
+
+.profile-wrapper {
+  width: 100%;
+  height: 60%;
+  margin: 60px auto;
+}
+.profile-image {
+  text-align: center;
+
+}
+
+.follow-btn {
+  height: 15%;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.follow-list {
+ display: flex;
+ justify-content: center;
+}
+
+
+.btn-primary {
+  height: 50px;
+  width: 180px;
+  font-size: 16px;
+  margin-right: 15px;
+  line-height: 30px;
+}
+
+.profile-info {
+  height: 15%;
+  padding-top: 20px;
+  text-align: center;
+}
