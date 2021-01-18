@@ -13,9 +13,11 @@
 
 .card {
   width: calc((100% - 50px) / 3);
-  height: 540px;
+  height: 550px;
   margin-top: 50px;
-  border: 1px solid rgba(0,0,0,1);
+  background: white;
+  border: solid 1px #5d627b;
+  box-shadow: 03px 5px rgba(0,0,0.22);
 }
 
 .image-body {
@@ -43,10 +45,11 @@
 
 .user-name {
   height: 30px;
+  margin:0 5px 0 5px;
 }
 
 .message {
-  height:145px ;
+  height:80px ;
   overflow: scroll;
 }
 
@@ -75,6 +78,26 @@
 
 .post-btn-icon {
   width: 50%;
+}
+
+.comments-wrapper {
+  height: 80px;
+}
+
+.comments {
+  height: 60px;
+  overflow: scroll;
+  
+}
+
+.comment {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-form {
+  font-size: 14px;
 }
 
 
