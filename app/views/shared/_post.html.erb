@@ -11,9 +11,30 @@
             <%= link_to "編集", edit_post_path(post.id), class:"btn btn-dark"%>
             <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-dark"%>
           <% end %>
-       </div>
-        <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
-          <div class="message"><%= post.text %></div>
-          <div class="create-time"><%= post.created_at%></div>
-    </div>
+      </div>
+      <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
+         <div class="message"><%= post.text %></div>
+        <div class="create-time"><%= post.created_at%></div>
+        <div class="comments-wrapper">
+          <%= link_to "コメントする", "#", class: "input-form"%>
+          <div class="comments">
+            <div class="comment">
+              <%= link_to "test", "#", class: "user-name" %>
+              <div class="comment"></div>
+            </div>
+            <div class="comment">
+              <%= link_to "test", "#", class: "user-name" %>
+              <div class="comment"></div>
+            </div>
+            <div class="comment">
+              <%= link_to "test", "#", class: "user-name" %>
+              <div class="comment"></div>
+            </div>
+            <div class="comment">
+              <%= link_to "test", "#", class: "user-name" %>
+              <div class="comment"></div>
+            </div>
+          </div>
+        </div>
+  </div>
 </div>
