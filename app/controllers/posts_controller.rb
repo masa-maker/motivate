@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
   before_action :move_to_index, only: [:edit, :destroy] 
   
@@ -21,7 +21,8 @@ class PostsController < ApplicationController
     end
   end
 
-
+  def show
+  end
   def edit
   end
 

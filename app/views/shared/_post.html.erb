@@ -1,6 +1,8 @@
 <div class ="card">
   <div class="image-body">
-      <%= image_tag post.image, class: "image-size"%>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.image, class: "image-size" %>
+    <% end %>
   </div>
   <div class="text-body">
       <div class="options">
@@ -14,28 +16,6 @@
       </div>
       <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
          <div class="message"><%= post.text %></div>
-        <div class="create-time"><%= post.created_at%></div>
-        <%# コメント欄%>
-        <div class="comments-wrapper">
-          <%= link_to "コメントする", new_post_comment_path(post.id), class: "input-form"%>
-          <div class="comments">
-            <div class="comment">
-              <%= link_to "test", "#", class: "user-name" %>
-              <div class="comment"></div>
-            </div>
-            <div class="comment">
-              <%= link_to "test", "#", class: "user-name" %>
-              <div class="comment"></div>
-            </div>
-            <div class="comment">
-              <%= link_to "test", "#", class: "user-name" %>
-              <div class="comment"></div>
-            </div>
-            <div class="comment">
-              <%= link_to "test", "#", class: "user-name" %>
-              <div class="comment"></div>
-            </div>
-          </div>
-        </div>
+        <div class="create-time"><%= l post.created_at, format: :short %></div>
   </div>
 </div>
