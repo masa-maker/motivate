@@ -1,0 +1,43 @@
+<%= render "shared/header"%>
+<div class="container">
+    <div class="detail-wrapper">
+      <div class ="detail-card">
+        <div class="image-body">
+          <%= image_tag @post.image, class: "image-size" %>
+        </div>
+        <div class="text-body">
+        <div class="options">
+          <% if user_signed_in? %>
+            <%= link_to "いいね", "#", class:"btn btn-danger"%>
+          <% end %>
+            <% if user_signed_in? && current_user.id == @post.user_id%>
+              <%= link_to "編集", edit_post_path(@post.id), class:"btn btn-dark"%>
+              <%= link_to "削除", post_path(@post.id), method: :delete, class:"btn btn-dark"%>
+            <% end %>
+        </div>
+          <%= link_to @post.user.name, user_path(@post.user.id),class: "user-name"%>
+        <div class="detail-message"><%= @post.text %></div>
+        <div class="create-time"><%= l @post.created_at, format: :short %></div>
+      </div>
+    </div>
+    <div class="comment-wrapper">
+     <%= form_with model: @post, url: posts_path, local: true do |f| %>
+      <div class="form-group">
+          <%= f.label :"コメント" %><br />
+          <%= f.text_area :text, class: "form-control" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "コメントする", class: "btn-sm btn-dark" %>
+        </div>
+      <% end %>
+      <div class="comments">
+        <div class="comment">
+          <%= link_to "name", "#", class: "user-name"%>
+          <p>テキストテキストテキストテキスト<p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<%= render "shared/footer" %>
