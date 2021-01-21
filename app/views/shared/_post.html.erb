@@ -1,19 +1,21 @@
 <div class ="card">
   <div class="image-body">
-      <%= image_tag post.image, class: "image-size"%>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.image, class: "image-size" %>
+    <% end %>
   </div>
   <div class="text-body">
       <div class="options">
         <% if user_signed_in? %>
-          <%= link_to "いいね", "#", class:"btn btn-danger"%>
+          <%= link_to "いいね", "#", class:"btn-sm btn-danger"%>
         <% end %>
           <% if user_signed_in? && current_user.id == post.user_id%>
-            <%= link_to "編集", edit_post_path(post.id), class:"btn btn-dark"%>
-            <%= link_to "削除", post_path(post.id), method: :delete, class:"btn btn-dark"%>
+            <%= link_to "編集", edit_post_path(post.id), class:"btn-sm btn-dark"%>
+            <%= link_to "削除", post_path(post.id), method: :delete, class:"btn-sm btn-dark"%>
           <% end %>
-       </div>
-        <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
-          <div class="message"><%= post.text %></div>
-          <div class="create-time"><%= post.created_at%></div>
-    </div>
+      </div>
+      <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
+         <div class="message"><%= post.text %></div>
+        <div class="create-time"><%= l post.created_at, format: :short %></div>
+  </div>
 </div>

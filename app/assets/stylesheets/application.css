@@ -22,6 +22,15 @@
    list-style: none;
  }
 
+ a {
+  text-decoration: none;
+  color: #333;
+ }
+
+ a:hover {
+   text-decoration: none;
+   color: #333;
+ }
  .container {
    width: 100vw;
    height: 100vh;
