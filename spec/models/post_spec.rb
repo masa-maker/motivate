@@ -17,13 +17,13 @@ RSpec.describe Post, type: :model do
         it "textがなければ投稿できない" do
           @post.text = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include ("Text can't be blank")
+          expect(@post.errors.full_messages).to include ("Textを入力してください")
         end
 
         it "imageがなければ投稿できない" do
           @post.image = nil
           @post.valid?
-          expect(@post.errors.full_messages).to include("Image can't be blank")
+          expect(@post.errors.full_messages).to include("Imageを入力してください")
         end
       end
     end
