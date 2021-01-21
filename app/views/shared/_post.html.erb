@@ -7,7 +7,7 @@
   <div class="text-body">
       <div class="options">
         <% if user_signed_in? %>
-          <%= link_to "いいね", "#", class:"btn-sm btn-outline-danger"%>
+         <%= link_to "いいね","#", class:"btn-sm btn-outline-danger"%>
         <% end %>
           <% if user_signed_in? && current_user.id == post.user_id%>
             <%= link_to "編集", edit_post_path(post.id), class:"btn-sm btn-dark"%>

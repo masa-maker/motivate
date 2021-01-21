@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :goods, dependent: :destroy
   has_one :profile
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+  def already_goods?(post)
+    self.goods.exists?(post_id: post.id)
+  end
 end
