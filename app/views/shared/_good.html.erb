@@ -1,0 +1,7 @@
+<div class="like_button">
+  <% if current_user.goods.find_by(good_id: @post.id) %>
+    <%= link_to "いいね", { controller: :goods, action: :destroy, good_id: @post.id}, method: :delete, remote: true, class:"btn-sm btn-outline-danger"%>
+  <% else %>
+    <%= link_to "いいね", { controller: :goods, action: :create, good_id: @post.id}, method: :post, remote: true, class:"btn-sm btn-danger"%>
+  <% end %>
+</div>>
