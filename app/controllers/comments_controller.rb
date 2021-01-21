@@ -3,10 +3,13 @@ class CommentsController < ApplicationController
   before_action :move_to_index, only: [:create, :destroy] 
   before_action :only_action, only: :destroy
   def create
-    if comment = Comment.create(comment_params) 
+    @post = Post.find(params[:post_id])
+    comment = Comment.new(comment_params) 
+    if comment.valid?
+      comment.save
       redirect_to post_path(comment.post.id)
     else
-      render  template: "posts/show"
+      redirect_to  post_path(comment.post.id)
     end
   end
 
