@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
       comment.save
       redirect_to post_path(comment.post.id)
     else
+      flash[:notice] = 'commentを入力してください'
       redirect_to  post_path(comment.post.id)
     end
   end

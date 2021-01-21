@@ -23,7 +23,11 @@
     <div class="comment-wrapper">
       
      <%= form_with model: [@post,@comment], local: true do |f| %>
-     <%= render 'shared/error_messages', model: f.object %>
+        <% if flash[:notice] %>
+      <div class="error-messages">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
         <div class="form-group">
           <%= f.label :"コメント" %><br />
           <%= f.text_area :comment, class: "form-control" %>
