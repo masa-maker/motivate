@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :users, through: :goods
   has_one_attached :image
   has_many :comments, dependent: :destroy
   has_many :goods, dependent: :destroy
@@ -10,6 +11,6 @@ class Post < ApplicationRecord
   end
 
   def liked_by?(user)
-    self.goods.where(user_id: user.id).exists?
+    goods.where(user_id: user.id).exists?
   end
 end

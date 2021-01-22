@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end 
 
   resources :posts, only: [:new, :show, :create, :edit, :update, :destroy] do
-    resources :goods, only: [:create, :destroy]
+    post 'add' => 'goods#create'
+    delete '/add' => 'goods#destroy'
   end
 end

@@ -1,7 +1,6 @@
-<div class="like_button" id="likes_buttons_<%= post.id %>">
+
   <% if post.liked_by?(current_user) %>
-    <%= link_to "いいね", post_good_path(post.id), method: :delete, remote: true, class:"btn-sm btn-outline-danger"%>
+    <%= link_to "いいね外す", post_add_path(post), method: :delete, remote: true, id: :"like-button-#{post.id}", class:"btn-sm btn-outline-danger"%>
   <% else %>
-    <%= link_to "いいね", post_goods_path(post.id), method: :post, remote: true, class:"btn-sm btn-danger"%>
+    <%= link_to "いいねする", post_add_path(post), method: :post, remote: true, id: :"like-button-#{post.id}", class:"btn-sm btn-danger"%>
   <% end %>
-</div>
