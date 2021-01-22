@@ -8,4 +8,8 @@ class Post < ApplicationRecord
     validates :text
     validates :image
   end
+
+  def liked_by?(user)
+    self.goods.where(user_id: user.id).exists?
+  end
 end

@@ -81,6 +81,10 @@
   width: 50%;
 }
 
+.like_button {
+  display: inline-block;
+}
+
 
 
 @media (max-width: 1024px) {
