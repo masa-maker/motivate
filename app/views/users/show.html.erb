@@ -29,10 +29,10 @@
         </li>
       <% end %>
         <li>
-        <%= link_to "1000", "#" %><p>フォロワー</p>
+        <%= link_to @user.followers.count, "#" %><p>フォロワー</p>
         </li>
         <li>
-        <%= link_to "1", "#" %><p>フォロー中</p>
+        <%= link_to @user.followings.count, "#" %><p>フォロー中</p>
         </li>
       </ul>
     </div>
