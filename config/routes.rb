@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     post 'add' => 'goods#create'
     delete '/add' => 'goods#destroy'
   end
+
 end
