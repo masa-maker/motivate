@@ -17,9 +17,9 @@
           <% end %>
       </div>
       <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
-         <div class="message"><%= post.text %></div>
+         <div class="message"><i class="far fa-sticky-note"></i><%= post.text %></div>
          <% post.tags.each do |tag| %>
-          <div class="tags"><%= tag.name %></div>
+          <div class="tags"><i class="fas fa-hashtag"></i><%= tag.name %></div>
          <% end %>
         <div class="create-time"><%= l post.created_at, format: :short %></div>
   </div>
