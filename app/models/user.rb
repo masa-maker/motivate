@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :goods, dependent: :destroy
   has_many :good_posts, through: :goods, source: :post
   has_one :profile
+  has_one_attached :image
 
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow

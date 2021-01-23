@@ -1,0 +1,20 @@
+
+.top-message {
+  color: #333;
+}
+
+.follow-wrapper {
+  height: 100vh;
+  width: 100vw;
+  padding: 150px 20px;
+  overflow: scroll;
+}
+
+.follow-content {
+  height: 100px;
+  padding: 10px 0;
+  margin-top: 10px;
+  border: solid 1px #5d627b;
+  box-shadow: 03px 5px rgba(0,0,0,0.22);
+  text-align: center;
+}
