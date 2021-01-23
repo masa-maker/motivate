@@ -7,7 +7,9 @@
   <div class="text-body">
       <div class="options">
         <% if user_signed_in? %>
-          <%= link_to "いいね", "#", class:"btn-sm btn-danger"%>
+          <div class="like_button", id="like-btn-<%= post.id %>">
+              <%= render 'goods/good', post: post %>
+          </div>
         <% end %>
           <% if user_signed_in? && current_user.id == post.user_id%>
             <%= link_to "編集", edit_post_path(post.id), class:"btn-sm btn-dark"%>

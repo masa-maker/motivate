@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
+  has_many :goods, dependent: :destroy
+  has_many :good_posts, through: :goods, source: :post
   has_one :profile
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

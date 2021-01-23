@@ -60,6 +60,18 @@
 - has_many   :goods
 - belongs_to :user
 
+## good テーブル
+
+| Column  | Type       | Option                         |
+|---------|------------|--------------------------------|
+| user    | references | null: false, foreign_key: true |
+| post    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :post
+- belongs_to :user
+
 
 ##  tags テーブル
 

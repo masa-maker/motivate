@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     resources :profiles, only: [:new, :create, :edit ,:update] 
   end 
+
+  resources :posts, only: [:new, :show, :create, :edit, :update, :destroy] do
+    post 'add' => 'goods#create'
+    delete '/add' => 'goods#destroy'
+  end
 end
