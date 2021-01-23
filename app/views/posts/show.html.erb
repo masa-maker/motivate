@@ -19,6 +19,9 @@
         </div>
           <%= link_to @post.user.name, user_path(@post.user.id),class: "user-name"%>
         <div class="detail-message"><%= @post.text %></div>
+          <% @post.tags.each do |tag| %>
+          <div class="tags"><%= tag.name %></div>
+         <% end %>
         <div class="create-time"><%= l @post.created_at, format: :short %></div>
       </div>
     </div>
