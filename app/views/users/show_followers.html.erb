@@ -1,0 +1,19 @@
+<%= render "shared/header"%>
+  <div class="follow-wrapper">
+  <h1 class="top-message">フォロワ一覧</h1>
+    <% @user.followers.each do |user| %>
+      <div class="follow-content">
+        <% unless user.profile.nil? %>
+          <div class="profile-image">
+            <%= image_tag user.profile.image, size: '50x50' ,class: "rounded-circle border border-secondary" %>
+          </div>
+        <% else %>
+          <div class="profile-image">
+          <%= image_tag 'bluewall.jpg',  size: '50x50' ,class: "rounded-circle border border-secondary" %>
+          </div>
+        <% end %>
+          <%= link_to user.name, user_path(user.id) %>
+      </div>
+    <% end %>
+</div>
+<%= render "shared/footer"%>

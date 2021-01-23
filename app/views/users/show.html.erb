@@ -25,14 +25,14 @@
         <% end %>
       <% else %>
         <li>
-          <%= link_to "フォローする", "#", class: "btn btn-primary btn-lg" %>
+          <%= render "relationships/follow_button", user: @user %>
         </li>
       <% end %>
         <li>
-        <%= link_to "1000", "#" %><p>フォロワー</p>
+        <%= link_to @user.followers.count, followers_user_path(@user) %><p>フォロワー</p>
         </li>
         <li>
-        <%= link_to "1", "#" %><p>フォロー中</p>
+        <%= link_to @user.followings.count, following_user_path(@user) %><p>フォロー中</p>
         </li>
       </ul>
     </div>
