@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     delete '/add' => 'goods#destroy'
   end
 
+  resouces :relationships, only: [:create, :destroy]
+
 end
