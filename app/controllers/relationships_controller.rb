@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_item
 
   def create
@@ -12,11 +13,11 @@ class RelationshipsController < ApplicationController
     following.destroy
     redirect_to @user
   end
-  
+
   private
 
   def set_item
-    @user = User.find(params[:relationship][:follow_id])
+    @user = User.find(params[:follow_id])
   end
 
 end

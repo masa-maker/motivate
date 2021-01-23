@@ -25,7 +25,7 @@
         <% end %>
       <% else %>
         <li>
-          <%= link_to "フォローする", "#", class: "btn btn-primary btn-lg" %>
+          <%= render "relationships/follow_button", user: @user %>
         </li>
       <% end %>
         <li>
