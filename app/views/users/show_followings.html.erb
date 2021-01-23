@@ -1,0 +1,6 @@
+<% @user.followings.each do |user| %>
+  <table>
+    <td><%= user.profile.image%></td>
+    <td><%= user.name%></td>
+  </table>
+<% end %>
