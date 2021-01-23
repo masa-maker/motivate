@@ -45,13 +45,18 @@
 
 .user-name {
   height: 30px;
-  margin:0 5px 0 5px;
+  margin:0 5px;
 }
 
 .message {
-  height:140px ;
+  height:120px ;
   margin: 0 5px 0 5px;
   overflow: scroll;
+}
+
+.tags {
+  height: 20px;
+  margin: 0 5px;
 }
 
 .create-time {
