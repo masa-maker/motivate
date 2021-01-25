@@ -17,7 +17,7 @@
           <% end %>
       </div>
       <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
-         <div class="message"><%= post.text %></div>
+         <div class="message"><i class="far fa-sticky-note"></i><%= post.text %></div>
         <div class="create-time"><%= l post.created_at, format: :short %></div>
   </div>
 </div>

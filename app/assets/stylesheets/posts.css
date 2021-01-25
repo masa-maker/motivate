@@ -45,7 +45,7 @@
 
 .user-name {
   height: 30px;
-  margin:0 5px 0 5px;
+  margin:0 5px;
 }
 
 .message {
@@ -53,6 +53,7 @@
   margin: 0 5px 0 5px;
   overflow: scroll;
 }
+
 
 .create-time {
   height: 30px;

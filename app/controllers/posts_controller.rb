@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show,  :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
-  before_action :move_to_index, only: [:edit, :destroy] 
+  before_action :move_to_index, only: [:destroy, :edit] 
   
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -44,17 +44,17 @@ class PostsController < ApplicationController
 
 private
 
-def post_params
-  params.require(:post).permit(:text, :image).merge(user_id: current_user.id)
-end
-
-def set_item
-  @post = Post.find(params[:id])
-end
-
-def move_to_index
-  if current_user.id != @post.user_id
-    redirect_to root_path 
+  def post_params
+    params.require(:post).permit(:text, :image).merge(user_id: current_user.id)
   end
-end
+
+  def set_item
+    @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    if current_user.id != @post.user_id
+      redirect_to root_path 
+    end
+  end
 end
