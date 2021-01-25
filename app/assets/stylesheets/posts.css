@@ -49,15 +49,11 @@
 }
 
 .message {
-  height:120px ;
+  height:140px ;
   margin: 0 5px 0 5px;
   overflow: scroll;
 }
 
-.tags {
-  height: 20px;
-  margin: 0 5px;
-}
 
 .create-time {
   height: 30px;
