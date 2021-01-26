@@ -1,6 +1,6 @@
 <%= render "shared/header"%>
 <div class="container">
-    <div class="detail-wrapper">
+  <div class="detail-wrapper">
       <div class ="detail-card">
         <div class="image-body">
           <%= image_tag @post.image, class: "image-size" %>
@@ -17,39 +17,39 @@
               <%= link_to "削除", post_path(@post.id), method: :delete, class:"btn-sm btn-dark"%>
             <% end %>
         </div>
-          <%= link_to @post.user.name, user_path(@post.user.id),class: "user-name"%>
+            <%= link_to user_path(@post.user.id),class: "user-name" do%>
+              <i class="fas fa-running">：<%= @post.user.name %></i>
+            <% end %>
         <div class="detail-message"><i class="far fa-sticky-note"></i><%= @post.text %></div>
         <div class="create-time"><%= l @post.created_at, format: :short %></div>
       </div>
-    </div>
-    <div class="comment-wrapper">
-      
-     <%= form_with model: [@post,@comment], local: true do |f| %>
-        <% if flash[:notice] %>
-      <div class="error-messages">
-        <%= flash[:notice] %>
+  </div>
+  <div class="comment-wrapper">
+        <%= form_with model: [@post,@comment], local: true do |f| %>
+          <% if flash[:danger] %>
+        <div class="error-messages">
+          <%= flash[:danger] %>
+        </div>
+        <% end %>
+          <div class="form-group">
+            <%= f.label :"コメント" %><br />
+            <%= f.text_area :comment, class: "form-control" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "コメントする", class: "btn-sm btn-dark" %>
+          </div>
+        <% end %>
+        <div class="comments">
+        <% @comments.each do |comment| %>
+          <div class="comment">
+            <%= link_to comment.user.name, user_path(@post.user.id), class: "user-name"%>
+            <% if current_user.id == comment.user.id %>
+            <%= link_to "削除", post_comment_path(@post.id, comment.id), method: :delete, class:"btn-sm btn-dark py-0"%>
+            <% end %>
+            <p><%= comment.comment%><p>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-        <div class="form-group">
-          <%= f.label :"コメント" %><br />
-          <%= f.text_area :comment, class: "form-control" %>
-        </div>
-        <div class="actions">
-          <%= f.submit "コメントする", class: "btn-sm btn-dark" %>
-        </div>
-      <% end %>
-      <div class="comments">
-      <% @comments.each do |comment| %>
-        <div class="comment">
-          <%= link_to comment.user.name, user_path(@post.user.id), class: "user-name"%>
-          <% if current_user.id == comment.user.id %>
-          <%= link_to "削除", post_comment_path(@post.id, comment.id), method: :delete, class:"btn-sm btn-dark py-0"%>
-          <% end %>
-          <p><%= comment.comment%><p>
-        </div>
-      <% end %>
-      </div>
-    </div>
 </div>
 
 

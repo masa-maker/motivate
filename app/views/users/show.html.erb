@@ -1,17 +1,17 @@
 <%= render "shared/header"%>
 <div class="container">
   <div class="profile-wrapper">
-  <% unless @user.profile.nil? %>
-    <div class="profile-image">
-    <%= image_tag @user.profile.image, size: '150x150' ,class: "rounded-circle border border-secondary" %>
-    </div>
-  <% else %>
-    <div class="profile-image">
-    <%= image_tag 'bluewall.jpg',  size: '150x150' ,class: "rounded-circle" %>
-    </div>
-  <% end %>
-    <div class="follow-btn">
-      <ul class="follow-list">
+    <% unless @user.profile.nil? %>
+      <div class="profile-image">
+      <%= image_tag @user.profile.image, size: '150x150' ,class: "rounded-circle border border-secondary" %>
+      </div>
+    <% else %>
+      <div class="profile-image" >
+       <i class="fas fa-user fa-6x fa-border"></i>
+      </div>
+    <% end %>
+      <div class="follow-btn">
+        <ul class="follow-list">
        
       <% if current_user.id == @user.id %>
        <% if @user.profile.nil? %>
@@ -45,14 +45,13 @@
     <p>プロフィールを更新し、ここに自己紹介を表示させてください。</p>
     </div>
     <% end %> 
-        <div class="inner">
-          <div class="card-wrapper">
-          <% @posts.each do |post|%>
-            <%= render partial: "shared/post", locals: { post: post }%>
-          <% end %> 
-          </div>
-        <div>
   </div>
+    <div class="card-wrapper">
+      <% @posts.each do |post|%>
+        <%= render partial: "shared/post", locals: { post: post }%>
+      <% end %> 
+    </div>
+  
 </div>
 
 

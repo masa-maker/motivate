@@ -8,11 +8,11 @@
             <%= image_tag user.profile.image, size: '50x50' ,class: "rounded-circle border border-secondary" %>
           </div>
         <% else %>
-          <div class="profile-image">
-          <%= image_tag 'bluewall.jpg',  size: '50x50' ,class: "rounded-circle border border-secondary" %>
-          </div>
+        <div class="profile-image" >
+          <i class="fas fa-user fa-2x fa-border"></i>
+        </div>
         <% end %>
-          <%= link_to user.name, user_path(user.id) %>
+          <%= link_to user.name, user_path(user.id), class: "user-name" %>
       </div>
     <% end %>
 </div>

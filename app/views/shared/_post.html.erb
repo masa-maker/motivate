@@ -5,6 +5,7 @@
     <% end %>
   </div>
   <div class="text-body">
+    
       <div class="options">
         <% if user_signed_in? %>
           <div class="like_button", id="like-btn-<%= post.id %>">
@@ -16,7 +17,9 @@
             <%= link_to "削除", post_path(post.id), method: :delete, class:"btn-sm btn-dark"%>
           <% end %>
       </div>
-      <%= link_to post.user.name, user_path(post.user.id),class: "user-name"%>
+      <%= link_to user_path(post.user.id),class: "user-name" do%>
+      <i class="fas fa-running">：<%= post.user.name %></i>
+      <% end %>
          <div class="message"><i class="far fa-sticky-note"></i><%= post.text %></div>
         <div class="create-time"><%= l post.created_at, format: :short %></div>
   </div>
