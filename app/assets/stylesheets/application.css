@@ -34,6 +34,7 @@
  .container {
    width: 100vw;
    height: 100vh;
+   padding: 80px 0;
  }
  
  .error-alert {
@@ -43,14 +44,19 @@
  }
 
  .error-message {
-  font-size: 1.3vw;
+  font-size: 12px;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+  margin-left: 10px;
+}
+
+.login-flash-message {
+  font-size: 12px;
   list-style: circle;
   color: rgb(182, 48, 0);
 }
 
-.login-flash-message {
-  font-size: 1.3vw;
-  list-style: circle;
-  color: rgb(182, 48, 0);
-}
+
+
+
 

@@ -2,13 +2,70 @@
 
 <%# 投稿一覧%>
 <div class="container">
-  <div class="inner">
-    <div class="card-wrapper">
-    <% @posts.each do |post|%>
-      <%= render partial: "shared/post", locals: { post: post }%>
-    <% end %>
+    <div class="card-wrapper row">
+      <% @posts.each do |post|%>
+        <%= render partial: "shared/post", locals: { post: post }%>
+      <% end %>
+      <% unless @posts.present? %>
+        <div class ="card">
+          <div class="image-body">
+            <%= link_to "#" do %>
+              <%= image_tag 'sample.jpg', class: "image-size" %>
+            <% end %>
+          </div>
+          <div class="text-body">
+            <div class="options">
+              <i class="fas fa-dumbbell fa-lg formal"></i>
+              <%= link_to "編集", '#', class:"btn-sm btn-dark"%>
+              <%= link_to "削除", '#', class:"btn-sm btn-dark"%>
+            </div>
+            <%= link_to "#", class: "user-name" do%>
+              <i class="fas fa-running">：鍛えた体をシェアする</i>
+            <% end %>
+           <div class="message"><i class="far fa-sticky-note"></i>日々のトレーニングで鍛えた体をシェア。<br>モチベーションになったらダンベルのマークを押してあげよう！</div>
+           <div class="create-time">21/12:00</div>
+          </div>
+        </div>
+        <div class ="card">
+          <div class="image-body">
+            <%= link_to "#" do %>
+              <%= image_tag 'sample3.jpg', class: "image-size" %>
+            <% end %>
+          </div>
+          <div class="text-body">
+            <div class="options">
+              <i class="fas fa-dumbbell fa-lg formal"></i>
+              <%= link_to "編集", '#', class:"btn-sm btn-dark"%>
+              <%= link_to "削除", '#', class:"btn-sm btn-dark"%>
+            </div>
+            <%= link_to "#", class: "user-name" do%>
+              <i class="fas fa-running">：食事をシェアする</i>
+            <% end %>
+           <div class="message"><i class="far fa-sticky-note"></i>体をつくった食事をシェア。<br>モチベーションになったらダンベルのマークを押してあげよう！</div>
+           <div class="create-time">21/12:00</div>
+          </div>
+        </div>
+        <div class ="card">
+          <div class="image-body">
+            <%= link_to "#" do %>
+              <%= image_tag 'sample2.jpg', class: "image-size" %>
+            <% end %>
+          </div>
+          <div class="text-body">
+            <div class="options">
+              <i class="fas fa-dumbbell fa-lg formal"></i>
+              <%= link_to "編集", '#', class:"btn-sm btn-dark"%>
+              <%= link_to "削除", '#', class:"btn-sm btn-dark"%>
+            </div>
+            <%= link_to "#", class: "user-name" do%>
+              <i class="fas fa-running">：ライフスタイルをシェアする</i>
+            <% end %>
+           <div class="message"><i class="far fa-sticky-note"></i>イけてるライフスタイルをシェア。<br>モチベーションになったらダンベルのマークを押してあげよう！</div>
+           <div class="create-time">21/12:00</div>
+          </div>
+        </div>
+     <% end %>
     </div>
-  </div>
   <% if user_signed_in? %>
     <%= link_to(new_post_path, class: 'post-btn') do %>
     <span class='post-btn-text'>投稿する</span>

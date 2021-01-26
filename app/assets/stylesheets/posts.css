@@ -1,40 +1,40 @@
-.inner {
-  width: 1024px;
-  margin: 0 auto;
-}
+
 
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding:80px 0 80px 0;
+  padding:0 0 80px 0;
 }
 
 .card {
-  width: calc((100% - 50px) / 3);
-  height: 540px;
-  margin-top: 50px;
+  width: 30%;
+  height: 550px;
+  margin-top: 20px;
   background: white;
   border: solid 1px #5d627b;
   box-shadow: 03px 5px rgba(0,0,0,0.22);
 }
 
 .image-body {
-  height: 300px;
+  height: 350px;
+  
 }
 
 .image-size {
   width: 100%;
-  height: 300px;
+  height: 350px;
+ border-radius: 4px;
 }
 
 .text-body {
-  border-top: 1px solid rgba(0,0,0,1);
   height: 200px;
+  position: relative;
 }
 
 .options {
+  margin-top: 5px;
   height: 35px;
 }
 
@@ -46,10 +46,20 @@
 .user-name {
   height: 30px;
   margin:0 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.user-name:hover {
+  box-shadow: 0 5px 10px black;
+  transform: translate(0, -5px);
+  color: #333;
+  text-decoration: none;
+  border-radius: 7px;
 }
 
 .message {
-  height:140px ;
+  height:90px ;
   margin: 0 5px 0 5px;
   overflow: scroll;
 }
@@ -60,10 +70,10 @@
 }
 
 .post-btn {
-  width: 120px;
-  background: #e03428;
+  width: 110px;
+  background: #333;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 20%;
   bottom: 70px;
   right: 32px;
   position: fixed;
@@ -73,7 +83,7 @@
 .post-btn-text {
   color: #fff;
   display: block;
-  font-size: 14px;
+  font-size: 10px;
   text-decoration: none;
   margin-bottom: 5px;
 }
@@ -87,70 +97,44 @@
 }
 
 
-
-@media (max-width: 1024px) {
-
-  .inner {
-    width: 80%;
-    width: 0 auto;
-  }
-
-  .card {
-    width: 70%;
-    margin-top: 50px;
-    margin-left: 10px;
-  }
-
-  .comment-wrapper {
-    padding-left: 20px;
-    width: 50%;
-  }
+.good-image {
+  position: absolute;
+  top: -55px;
+  left: 72%;
+  z-index: +2;
 }
 
-@media (max-width: 800px) {
 
-  .inner {
-    width: 90%;
-    width: 0 auto;
-  }
-
-  .card {
-    width: 70%;
-    margin-top: 50px;
-    margin-left: 10px;
-  }
-
-  .comment-wrapper {
-    padding-left: 20px;
-    width: 50%;
-  }
+@media (max-width: 992px) {
+.card {
+  width: 50%;
+  margin:20px auto;
 }
 
-@media (max-width: 599px) {
-  
-  .card {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-    margin-top: 50px;
-  }
+}
 
-  .comment-wrapper {
-    padding-left: 20px;
-    width: 50%;
-  }
+@media (max-width: 768px) {
+ .card {
+   width: 55%;
+   margin:20px auto;
+ }
+ .good-image {
+  position: absolute;
+  top: -55px;
+  left: 69%;
+  z-index: +2;
+}
+}
 
-  .detail-wrapper {
-    padding-top: 20px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    
-  }
-  .comment-wrapper {
-    padding-bottom: 180px;
-    width: 100%;
-    display: flex;
-    text-align: center;
-  }
+@media (max-width: 544px) {
+ .card {
+   width: 60%;
+   margin:20px auto;
+ }
+ .good-image {
+  position: absolute;
+  top: -55px;
+  left: 69%;
+  z-index: +2;
+}
 }
