@@ -1,12 +1,12 @@
 
   <% if post.liked_by?(current_user) %>
     <%= link_to  post_add_path(post), method: :delete, remote: true, id: :"like-button-#{post.id}" do%>
-      <i class="fas fa-dumbbell fa-lg size"></i>
+      <i class="fas fa-dumbbell fa-lg size" alt="good" ></i>
     <% end %>
     <%= image_tag "motivate.jpeg", size: "90x100", class: "good-image", id: "good-img" %>
   <% else %>
     <%= link_to  post_add_path(post), method: :post, remote: true, id: :"like-button-#{post.id}" do%>
-      <i class="fas fa-dumbbell fa-lg formal"></i>
+      <i class="fas fa-dumbbell fa-lg formal" alt="good" ></i>
     <% end %>
     
   <% end %>
