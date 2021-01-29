@@ -40,7 +40,7 @@
  .error-alert {
   display: inline-block;
   position: absolute;
-  top: 150px;
+  top: 100px;
  }
 
  .error-message {

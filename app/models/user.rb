@@ -33,5 +33,13 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+
+  def self.from_omniauth(auth)
+    motivate = MotivateCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = User.where(email: auth.info.email).first_or_initialize(
+      name: auth.info.name,
+      email: auth.info.email
+    )
+   end
   
 end
