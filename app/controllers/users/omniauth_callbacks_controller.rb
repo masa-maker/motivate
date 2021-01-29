@@ -14,11 +14,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    private
   
    def authorization
-     @user = User.from_omniauth(request.env["omniauth.auth"])
+     motivate_info = User.from_omniauth(request.env["omniauth.auth"])
+     @user = motivate_info[:user]
 
      if @user.persisted? #ユーザー情報が登録ずみのため、新規登録ではなくログイン処理を行う
       sign_in_and_redirect @user, event: :authentication
      else #ユーザー情報が未登録なので、新規登録画面へ遷移する
+      @motivate_id = motivate_info[:motivate].id
       render template: 'devise/registrations/new'
      end
 

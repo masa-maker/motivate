@@ -40,6 +40,11 @@ class User < ApplicationRecord
       name: auth.info.name,
       email: auth.info.email
     )
-   end
-  
+    #userが登録済みであるか判断
+    if user.persisted?
+      motivate.user = user
+      motivate.save
+    end
+    { user: user, motivate: motivate }
+  end
 end
