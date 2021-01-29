@@ -1,0 +1,3 @@
+class MotivateCredential < ApplicationRecord
+     
+end
