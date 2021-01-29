@@ -2,8 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  has_many :motivate_credentials
   has_many :posts
   has_many :comments
   has_many :goods, dependent: :destroy
@@ -32,5 +33,18 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
-  
+
+  def self.from_omniauth(auth)
+    motivate = MotivateCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = User.where(email: auth.info.email).first_or_initialize(
+      name: auth.info.name,
+      email: auth.info.email
+    )
+    #userが登録済みであるか判断
+    if user.persisted?
+      motivate.user = user
+      motivate.save
+    end
+    { user: user, motivate: motivate }
+  end
 end
