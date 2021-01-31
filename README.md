@@ -11,7 +11,7 @@
  https://motivate-0115.herokuapp.com/
 
 # テスト用アカウント
-テスト用に下記のアカウントでログインしていただけます。
+テスト用に下記のアカウントでログインしていただけます。<br>
 Email: text@exam<br>
 Password: testdesu
 
