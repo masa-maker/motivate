@@ -8,7 +8,7 @@
 「誰かのモチベーションになる」ということがテーマです。
 
  # アプリURL
- https://motivate-0115.herokuapp.com/
+ https://masakin117.com/
 
 # テスト用アカウント
 テスト用に下記のアカウントでログインしていただけます。<br>
