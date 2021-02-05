@@ -12,7 +12,7 @@
 
 # テスト用アカウント
 テスト用に下記のアカウントでログインしていただけます。<br>
-Email: text@exam<br>
+Email: test@exam<br>
 Password: testdesu
 
 # 利用方法
