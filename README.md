@@ -7,6 +7,25 @@
 フィットネス専用の画像シェアアプリになります。
 「誰かのモチベーションになる」ということがテーマです。
 
+# 使用技術
+
+- Rails 6.0.3.4<br>
+- Ruby 2.6.5<br>
+- Gem 3.0.3<br>
+- MySql 5.6.50<br>
+- Bootstrap<br>
+- Nginx<br>
+- Puma<br>
+- AWS<br>
+ - EC2
+ - S3
+ - ROUTE53
+- Capistrano3<br>
+- RSpec<br>
+- Google API<br>
+- Facebook API<br>
+
+
  # アプリURL
  https://masakin117.com/
 
@@ -113,6 +132,9 @@ Password: testdesu
 | 検索機能                                     | ユーザーや投稿を検索するための機能です。                                    | ユーザーや投稿を検索できるようにします。                            |
 | ある一定数のフォロー獲得後に「称号」を表示         | フォロー数の多い人は「フィットネススター」として認定し、承認欲求を満たす機能です。 | ある一定のフォロー数を獲得した人に、プロフィール横に「称号」を表示します。|
 
+# AWS構成図
+
+![AWS](https://user-images.githubusercontent.com/76035698/108619885-2e2dac80-746b-11eb-82e0-8c7d908ab0c1.png)
 
 
 # ER図
@@ -121,11 +143,11 @@ Password: testdesu
 
 # ローカルでの動作環境
 
-Rails 6.0.3.4<br>
-Ruby 2.6.5<br>
-Gem 3.0.3<br>
-MySql 5.6.50<br>
-Yarn 1.22.10
+- Rails 6.0.3.4<br>
+- Ruby 2.6.5<br>
+- Gem 3.0.3<br>
+- MySql 5.6.50<br>
+- Yarn 1.22.10
 
 
 ターミナルにて下記を順番に実行ください。
