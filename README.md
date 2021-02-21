@@ -25,6 +25,16 @@
 - Google API<br>
 - Facebook API<br>
 
+# 機能一覧
+- ログイン機能(devise, GoogleAPI, Facebook API)
+- 投稿機能(Active Storage)
+- コメント機能
+- いいね機能(Ajax)
+- フォロー機能
+
+# テスト
+- 単体テスト
+- 結合テスト
 
  # アプリURL
  https://masakin117.com/
