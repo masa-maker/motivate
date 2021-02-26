@@ -2,12 +2,12 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: url("home2.jpeg")
+  background:url("home2.jpeg")
   center / cover;
 }
 
 .box {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   min-height: 100vh;
   color: #333;
@@ -27,20 +27,20 @@
 
 a {
   text-decoration: none;
-  color: white;
+  color:#333;
 }
 
 a:hover {
-  color:white;
+  color:333;
   text-decoration: none;
 }
 
 .p1 {
-  color:white;
+  color: #333;
   font-weight: bold;
 }
 
 .p2 {
-  color: white;
+  color: #333;
   font-size: 30px;
 }
