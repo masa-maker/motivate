@@ -1,8 +1,16 @@
 <nav class="header-bar navbar-dark bg-dark fixed-top">
-  <div class="header-right"><%= link_to root_path do%>
+<% if user_signed_in? %>
+  <div class="header-right"><%= link_to posts_path do%>
   <%= image_tag 'logo.png' , size: '160x80'  %>
   <% end %>
   </div>
+<% else %>
+  <div class="header-right"><%= link_to new_user_session_path do%>
+  <%= image_tag 'logo.png' , size: '160x80'  %>
+  <% end %>
+  </div>
+<% end %>
+
   <div class="header-center"><% if user_signed_in? %>
   <i class="fas fa-running">：<%= link_to  current_user.name , user_path(current_user.id), class:"current_name" %></i>
 <% end %></div>

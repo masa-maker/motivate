@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
+  root to: 'homes#index'
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
 
-  root to: "posts#index"
 
-  resources :posts, only: [:new, :show, :create, :edit, :update, :destroy] do
+  resources :posts do
     resources :comments, only: [:create, :destroy]
   end
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :profiles, only: [:new, :create, :edit ,:update] 
   end 
 
-  resources :posts, only: [:new, :show, :create, :edit, :update, :destroy] do
+  resources :posts do
     post 'add' => 'goods#create'
     delete '/add' => 'goods#destroy'
   end

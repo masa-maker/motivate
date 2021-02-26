@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_item, only: [:show,  :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   before_action :move_to_index, only: [:destroy, :edit] 
   
   def index
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.valid?
       @post.save
-      redirect_to root_path
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to root_path
+      redirect_to posts_path
     else
       render 'edit'
     end
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to root_path
+    redirect_to posts_path
   end
 
 private
