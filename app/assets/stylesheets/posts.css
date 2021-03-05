@@ -19,7 +19,9 @@
 
 .image-body {
   height: 350px;
-  
+  border: 1px solid #ccc; /* 枠線 */
+  background-color: #fff; /* 背景色 */
+  box-shadow: 1px 1px 2px #ccc;
 }
 
 .image-size {
