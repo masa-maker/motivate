@@ -134,6 +134,11 @@ Password: testdesu
 
 ![follow](https://user-images.githubusercontent.com/76035698/106378020-87fb0380-63e4-11eb-93b1-9f1aebb1e051.gif)
 
+## 画像プレビュー機能
+投稿前の画像を確認することができます。
+
+![preview](https://user-images.githubusercontent.com/76035698/110060230-f0a11b80-7da8-11eb-972d-56d1514825fc.gif)
+
 # 実装予定の機能
 
 | 機能                                         | 目的                                                                 | 詳細                                                          |
